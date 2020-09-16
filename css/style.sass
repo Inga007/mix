@@ -1,0 +1,127 @@
+*
+	padding: 0
+	margin: 0
+	box-sizing: border-box
+.container
+	display: flex
+	justify-content: space-around
+	img 
+		height: 500px
+		margin-top: 150px
+$columns: 5
+@mixin fonts 
+	font-size: 20px
+	font-weight: bold
+
+@for $i from 1 through $columns 
+	.columns-#{$i} 
+		width: (100% / $i)
+    
+$test: 5
+
+p 
+	@if $test < 3 
+		color: red
+	@else if $test == 3 
+		color: blue
+	@else 
+		color: green
+	@include fonts	
+	padding: 10px
+.global
+	display: flex
+	justify-content: center
+	align-items: center
+	background: grey
+	margin: 50px 0
+	.wrapper
+		position: relative
+		max-width: 1200px
+		height: 450px
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+		margin: 30px
+
+		
+		.card
+			position: relative
+			background: white
+			max-width: 300px
+			height: 200px
+			border-radius: 5px
+			margin: 20px
+			padding: 15px
+			transition: .5s ease-in-out
+			&:hover 
+				height: 350px
+			.img 
+				position: relative
+				width: 250px
+				height: 250px
+				top: -40px
+				left: 10px
+
+				img 
+					width: 100%
+					border-radius: 8px
+			.content
+				position: relative
+				margin-top: -150px
+				text-align: center
+				visibility: hidden
+				opacity: 0
+				transition: 0.5s ease-in-out
+				z-index: 10
+			&:hover .content
+				visibility: visible
+				opacity: 1
+				margin-top: -80px
+				transition-delay: .2s
+.main
+	
+	font-size: 2rem
+	font-weight: 900  
+	text-transform: uppercase
+	width: 150px
+	height: 150px
+	margin: .5rem
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	h2 
+		display: flex
+		span:nth-child(1)
+			animation: drop-letters 5s 0.1s infinite	
+		span:nth-child(2)
+			animation: drop-letters 5s 0.2s infinite
+
+		span:nth-child(3)
+			animation: drop-letters 5s 0.3s infinite
+
+		span:nth-child(4)
+			animation: drop-letters 5s 0.4s infinite
+		span:nth-child(5)
+			animation: drop-letters 5s 0.5s infinite
+
+		span:nth-child(6)
+			animation: drop-letters 5s 0.6s infinite				
+@keyframes drop-letters
+	0%
+		transform: translateY(0)
+	
+	10%
+		transform: translateY(0)
+	
+	15%
+		transform: translateY(-100%)
+	
+	20%
+		transform: translateY(0)
+	
+	100%
+		transform: translateY(0)
+	
+	
